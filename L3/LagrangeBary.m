@@ -1,0 +1,2 @@
+function Lx=LagrangeBary(nodes, values, x)  %nodes: x1,...,xn  %values: f(x1), ..., f(xn)  A=CoeffBary(nodes); %vector of coefficients  %we apply formula Barycentric (7) from course 2, page 9  Lx=sum(A.*values./(x-nodes))/...  sum(A./(x-nodes));
+endfunction  function A=CoeffBary(nodes)  A=nodes; %NaN(size(nodes))  for i=1:length(nodes)    A(i)=1/prod(nodes(i)-nodes(nodes!=nodes(i)));  endforendfunction    
